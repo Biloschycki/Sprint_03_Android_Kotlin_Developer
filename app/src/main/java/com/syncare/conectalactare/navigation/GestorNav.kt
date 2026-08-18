@@ -1,5 +1,5 @@
 package com.syncare.conectalactare.navigation
-
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -18,11 +18,11 @@ import com.syncare.conectalactare.ui.theme.Brand
 private data class ItemNav(val rota: String, val titulo: String, val icone: androidx.compose.ui.graphics.vector.ImageVector)
 
 private val itensGestor = listOf(
-    ItemNav(Routes.GESTOR_VISAO_GERAL, "Visão geral", Icons.Filled.Dashboard),
-    ItemNav(Routes.GESTOR_AVALIACOES, "Avaliações", Icons.Filled.FactCheck),
-    ItemNav(Routes.GESTOR_DOADORAS, "Doadoras", Icons.Filled.People),
-    ItemNav(Routes.GESTOR_COLETAS, "Coletas", Icons.Filled.WaterDrop),
-    ItemNav(Routes.GESTOR_AUDITORIA, "Auditoria", Icons.Filled.History)
+    BottomNavItem(Routes.GESTOR_VISAO_GERAL, "Visão geral", Icons.Filled.Dashboard),
+    BottomNavItem(Routes.GESTOR_AVALIACOES, "Avaliações", Icons.Filled.FactCheck),
+    BottomNavItem(Routes.GESTOR_DOADORAS, "Doadoras", Icons.Filled.People),
+    BottomNavItem(Routes.GESTOR_COLETAS, "Coletas", Icons.Filled.WaterDrop),
+    BottomNavItem(Routes.GESTOR_AUDITORIA, "Auditoria", Icons.Filled.History)
 )
 
 @Composable

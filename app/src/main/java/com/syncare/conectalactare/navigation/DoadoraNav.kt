@@ -1,5 +1,5 @@
 package com.syncare.conectalactare.navigation
-
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -17,14 +17,13 @@ import com.syncare.conectalactare.ui.components.ClTopBar
 import com.syncare.conectalactare.ui.screens.doadora.*
 import com.syncare.conectalactare.ui.theme.Brand
 
-private data class ItemNav(val rota: String, val titulo: String, val icone: androidx.compose.ui.graphics.vector.ImageVector)
 
 private val itensDoadora = listOf(
-    ItemNav(Routes.DOADORA_INICIO, "Início", Icons.Filled.Home),
-    ItemNav(Routes.DOADORA_COLETAS, "Coletas", Icons.Filled.WaterDrop),
-    ItemNav(Routes.DOADORA_BANCOS, "Bancos", Icons.Filled.Place),
-    ItemNav(Routes.DOADORA_CONTEUDO, "Conteúdo", Icons.Filled.MenuBook),
-    ItemNav(Routes.DOADORA_PERFIL, "Perfil", Icons.Filled.Person)
+    BottomNavItem(Routes.DOADORA_INICIO, "Início", Icons.Filled.Home),
+    BottomNavItem(Routes.DOADORA_COLETAS, "Coletas", Icons.Filled.WaterDrop),
+    BottomNavItem(Routes.DOADORA_BANCOS, "Bancos", Icons.Filled.Place),
+    BottomNavItem(Routes.DOADORA_CONTEUDO, "Conteúdo", Icons.Filled.MenuBook),
+    BottomNavItem(Routes.DOADORA_PERFIL, "Perfil", Icons.Filled.Person)
 )
 
 @Composable
