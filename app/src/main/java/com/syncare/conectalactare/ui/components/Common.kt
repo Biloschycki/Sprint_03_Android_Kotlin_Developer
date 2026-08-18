@@ -119,7 +119,6 @@ fun ClTopBar(titulo: String, aoVoltar: (() -> Unit)? = null) {
     )
 }
 
-/** Pequeno atalho para tornar um card/linha clicável com ripple padrão. */
 fun Modifier.clickableSafe(onClick: () -> Unit): Modifier = this.clickable(onClick = onClick)
 
 @Composable
