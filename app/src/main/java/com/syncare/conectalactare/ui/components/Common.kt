@@ -99,7 +99,7 @@ fun ClCard(modifier: Modifier = Modifier, content: @Composable ColumnScope.() ->
         Column(Modifier.padding(16.dp), content = content)
     }
 }
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ClTopBar(titulo: String, aoVoltar: (() -> Unit)? = null) {
     TopAppBar(

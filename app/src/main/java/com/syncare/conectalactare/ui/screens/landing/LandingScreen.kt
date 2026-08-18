@@ -1,7 +1,5 @@
 package com.syncare.conectalactare.ui.screens.landing
 
-package com.syncare.conectalactare.ui.screens.landing
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
