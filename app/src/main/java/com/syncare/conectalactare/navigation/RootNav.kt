@@ -22,7 +22,8 @@ fun RootNavGraph() {
         composable(Routes.LANDING) {
             LandingScreen(
                 aoClicarQuero = { navController.navigate(Routes.QUIZ) },
-                aoClicarJaSouDoadora = { navController.navigate(Routes.LOGIN) }
+                aoClicarJaSouDoadora = { navController.navigate(Routes.LOGIN) },
+                aoClicarSouGestor = { navController.navigate(Routes.LOGIN) }
             )
         }
         composable(Routes.QUIZ) {

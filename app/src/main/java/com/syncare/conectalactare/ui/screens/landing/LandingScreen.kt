@@ -23,7 +23,8 @@ import com.syncare.conectalactare.ui.theme.*
 @Composable
 fun LandingScreen(
     aoClicarQuero: () -> Unit,
-    aoClicarJaSouDoadora: () -> Unit
+    aoClicarJaSouDoadora: () -> Unit,
+    aoClicarSouGestor: () -> Unit
 ) {
     Column(
         Modifier
@@ -72,6 +73,12 @@ fun LandingScreen(
                 shape = RoundedCornerShape(14.dp),
                 modifier = Modifier.fillMaxWidth().height(52.dp)
             ) { Text("Já sou doadora", fontWeight = FontWeight.Bold, fontSize = 16.sp) }
+            Spacer(Modifier.height(10.dp))
+            TextButton(
+                onClick = aoClicarSouGestor,
+                colors = ButtonDefaults.textButtonColors(contentColor = Color.White),
+                modifier = Modifier.fillMaxWidth()
+            ) { Text("Sou gestor(a) de banco de leite", fontWeight = FontWeight.Medium, fontSize = 13.sp) }
         }
 
         // Stats

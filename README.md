@@ -40,16 +40,17 @@ cobrindo a jornada de ponta a ponta:
 ## Link do repositório do projeto
 
 - App Android (este projeto): https://github.com/Biloschycki/Sprint_03_Android_Kotlin_Developer
-
+- Backend da proposta original: https://github.com/vitorportelaf/conecta-lactare-backend
+- Frontend web da proposta original: https://github.com/vitorportelaf/conecta-lactare-frontend
 
 ## Telas implementadas
 
 ### Área pública
-- **Landing** — apresentação da proposta, estatísticas do problema e chamada para ação ("Quero doar" / "Já sou doadora").
+- **Landing** — apresentação da proposta, estatísticas do problema e chamada para ação ("Quero doar" / "Já sou doadora" / "Sou gestor(a) de banco de leite").
 - **Quiz de elegibilidade** — perguntas sim/não com barra de progresso; ao final, direciona para a tela de resultado.
 - **Resultado (elegível / não elegível)** — feedback imediato de acordo com as respostas do quiz.
 - **Cadastro** — formulário de criação de conta (nome, e-mail, CPF, telefone, endereço com busca de CEP mockada).
-- **Login** — acesso mockado (qualquer e-mail/senha), com escolha entre entrar como **doadora** ou **gestor(a)** para demonstrar as duas áreas do produto.
+- **Login** — acesso mockado (qualquer e-mail/senha), com escolha entre entrar como **doadora** ou **gestor(a)** para demonstrar as duas áreas do produto. Acessível tanto pelo botão "Já sou doadora" quanto pelo botão "Sou gestor(a) de banco de leite" na Landing.
 
 ### Área da doadora
 - **Início** — resumo de impacto (litros doados, doações concluídas, bebês potencialmente alimentados), próxima coleta agendada e atalhos rápidos.
@@ -70,12 +71,53 @@ Todas as telas usam **dados mockados** definidos em `data/mock/MockData.kt` — 
 aprovar/reprovar avaliação, sinalizar/cancelar coleta e editar perfil atualizam esses dados em
 memória durante a sessão, para simular o comportamento real do produto sem depender de backend.
 
+## Capturas de tela
+
+Prints reais do app rodando no emulador Android Studio.
+
+### Área pública
+
+| Landing | Quiz de elegibilidade | Resultado |
+|---|---|---|
+| ![Landing](docs/screenshots/landing.png) | ![Quiz](docs/screenshots/quiz.png) | ![Resultado](docs/screenshots/resultado.png) |
+
+| Cadastro (1) | Cadastro (2) | Cadastro (3) |
+|---|---|---|
+| ![Cadastro 1](docs/screenshots/cadastro-1.png) | ![Cadastro 2](docs/screenshots/cadastro-2.png) | ![Cadastro 3](docs/screenshots/cadastro-3.png) |
+
+| Login |
+|---|
+| ![Login](docs/screenshots/login.png) |
+
+### Área da doadora
+
+| Início | Minhas coletas | Sinalizar coleta |
+|---|---|---|
+| ![Início](docs/screenshots/doadora-inicio.png) | ![Minhas coletas](docs/screenshots/doadora-coletas.png) | ![Sinalizar coleta](docs/screenshots/doadora-nova-coleta.png) |
+
+| Bancos de leite | Conteúdo educativo | Perfil |
+|---|---|---|
+| ![Bancos de leite](docs/screenshots/doadora-bancos.png) | ![Conteúdo educativo](docs/screenshots/doadora-conteudo.png) | ![Perfil](docs/screenshots/doadora-perfil.png) |
+
+### Área do gestor
+
+| Visão geral | Fila de avaliação | Doadoras |
+|---|---|---|
+| ![Visão geral](docs/screenshots/gestor-visao-geral.png) | ![Fila de avaliação](docs/screenshots/gestor-avaliacoes.png) | ![Doadoras](docs/screenshots/gestor-doadoras.png) |
+
+| Coletas | Auditoria |
+|---|---|
+| ![Coletas](docs/screenshots/gestor-coletas.png) | ![Auditoria](docs/screenshots/gestor-auditoria.png) |
+
+
+
 ## Funcionalidades implementadas
 
 - Onboarding público com quiz de elegibilidade (respostas sim/não) e resultado condicional
   (elegível → cadastro / não elegível → volta ao início).
 - Cadastro de doadora com formulário completo e preenchimento automático de endereço a partir do CEP (mockado).
-- Login mockado com escolha de perfil (doadora ou gestor), demonstrando as duas áreas do app.
+- Login mockado com escolha de perfil (doadora ou gestor), demonstrando as duas áreas do app —
+  acessível pelos botões "Já sou doadora" e "Sou gestor(a) de banco de leite" na tela inicial.
 - Navegação por abas (bottom navigation) dentro de cada área, com 5 telas na área da doadora e
   5 na área do gestor.
 - Listagem dinâmica de coletas, bancos de leite, conteúdos educativos, doadoras e logs de
@@ -153,17 +195,17 @@ app/src/main/java/com/syncare/conectalactare/
    na primeira sincronização, para baixar o Gradle e as bibliotecas do Google Maven/Maven Central).
    O Android Studio gerencia o Gradle internamente nessa primeira abertura, então não é preciso
    rodar nada pela linha de comando.
-3. bidos são mockados localmente no próprio app.
+3. Selecione um emulador Android (API 24+) ou conecte um aparelho físico com depuração USB ativada.
+4. Clique em **Run ▶** (ou `Shift+F10`) para instalar e abrir o app.
+5. Na tela inicial, toque em **"Quero doar"** para seguir o fluxo público (quiz → cadastro →
+   login), ou em **"Já sou doadora"** para ir direto ao login e escolher entrar como **doadora**
+   ou **gestor(a)** e explorar as respectivas áreas do app.
+
+Não é necessária nenhuma configuração de API, chave ou variável de ambiente — todos os dados
+exibidos são mockados localmente no próprio app.
 
 > **Sobre o `gradlew`:** os scripts `gradlew`/`gradlew.bat` estão incluídos, mas o binário
 > `gradle/wrapper/gradle-wrapper.jar` não foi versionado neste pacote. Para compilar pela
 > linha de comando (fora do Android Studio), rode `gradle wrapper` uma vez com um Gradle
 > instalado localmente para gerar esse arquivo — ou simplesmente abra o projeto direto no
 > Android Studio, que não depende dele.
-Selecione um emulador Android (API 24+) ou conecte um aparelho físico com depuração USB ativada.
-4. Clique em **Run ▶** (ou `Shift+F10`) para instalar e abrir o app.
-5. Na tela inicial, toque em **"Quero doar"** para seguir o fluxo público (quiz → cadastro →
-   login), ou em **"Já sou doadora"** para ir direto ao login e escolher entrar como **doadora**
-   ou **gestor(a)** e explorar as respectivas áreas do app.
-
-Não é necessária nenhuma configuração de API, chave ou variável de ambiente 
