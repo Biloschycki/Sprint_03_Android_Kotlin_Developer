@@ -40,8 +40,6 @@ cobrindo a jornada de ponta a ponta:
 ## Link do repositório do projeto
 
 - App Android (este projeto): https://github.com/Biloschycki/Sprint_03_Android_Kotlin_Developer
-- Backend da proposta original: https://github.com/vitorportelaf/conecta-lactare-backend
-- Frontend web da proposta original: https://github.com/vitorportelaf/conecta-lactare-frontend
 
 ## Telas implementadas
 
